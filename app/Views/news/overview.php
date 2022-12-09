@@ -59,6 +59,8 @@ function hide()
                     <div class="card-body p-3 text-center">
                         <h3 class="fw-bold mb-2 text-uppercase">Admin Login</h3>
                         <p class="text-white-50 ">Please enter your name and password!</p>
+                        <form action="<?php echo base_url();?>/news/add" method="post">
+    <?= csrf_field() ?>
                         <div class="form-outline form-white mb-4">
                           <input type="email" placeholder="Username"  class="form-control form-control-lg" />
                         </div>
@@ -68,13 +70,13 @@ function hide()
                           
                         </div>
                         
-                        <a href="About.html"><button class="btn btn-outline-light btn-lg px-5 lgbtn" type="submit">Login</button></a><br><br>
+                        <a href=""><button class="btn btn-outline-light btn-lg px-5 lgbtn" type="submit">Login</button></a><br><br>
                         
                      
                       <div>
                         <p class="">Don't have an account? <a href="" class="text-white-50 fw-bold" data-bs-toggle="modal" data-bs-target="#modalForm" onclick="hide()">Sign Up</a>
                         </p>
-                      </div> </div>
+                      </div> </form></div>
                 </div>
               </div>
         
@@ -92,12 +94,19 @@ function hide()
                           <div class="modal-body">
                               <?= session()->getFlashdata('error') ?>
 <?= service('validation')->listErrors() ?>
+<?php if(session()->getFlashdata('msg')):?>
+                    <div class="alert alert-warning">
+                       <?= session()->getFlashdata('msg') ?>
+                    </div>
+                <?php endif;?>
 
-<form action="/news/create" method="post">
+<form action="<?php echo base_url();?>/news/create" method="post">
     <?= csrf_field() ?>
+   
                                   <div class="mb-3">
                                       <label class="form-label" style="color: white;">Email Address</label>
-                                      <input type="text" class="form-control" id="username" name="email" placeholder="Username" required />
+                                      <input type="text" class="form-control" id="username" name='email' placeholder="Username" required />
+                                      
                                   </div>
                                   <div class="mb-3">
                                       <label class="form-label" style="color: white;">Password</label>

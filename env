@@ -44,8 +44,8 @@ database.default.database = CI
 database.default.username = phpmyadmin
 database.default.password = a
 database.default.DBDriver = MySQLi
-database.default.DBPrefix =
-database.default.port = 8080
+#database.default.DBPrefix =
+#database.default.port = 8080
 
 # database.tests.hostname = localhost
 # database.tests.database = ci4_test

@@ -13,7 +13,7 @@
   
   <div class="alert alert-success">
     <h3><strong>Registered Successfully !</strong> Click on the button to return to home page! </h3><br>
-    <a href = "/"><button type="button" class="btn btn-light btn-lg">Home</button></a>
+    <a href = "<?php echo base_url();?>"><button type="button" class="btn btn-light btn-lg">Home</button></a>
   </div>
   </div></center>
   </body>

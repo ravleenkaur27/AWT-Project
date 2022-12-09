@@ -1,25 +1,20 @@
-
-
-<?= session()->getFlashdata('error') ?>
-<?= service('validation')->listErrors() ?>
-
-<form action="news/create" method="post">
-    <?= csrf_field() ?>
-
-    
-                                      <label class="form-label" style="color: white;">Email Address</label>
-                                      <input type="text" class="form-control" id="username" name="email" placeholder="Username" />
-                                  
-                                      <label class="form-label" style="color: white;">Password</label>
-                                      <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
-                                 
-
-                                  
-                                    <label class="form-label" style="color: white;">Confirm Password</label>
-                                    <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password" />
-                               
-
-                                  
-                                      <button type="submit">Submit</button>
-                                 
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OOPS!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<center>
+<div class="container mt-3">
+  
+  <div class="alert alert-danger">
+    <h3><strong>OOPS! Register Yourself again!</strong> Click on the button to return to home page! </h3><br>
+    <a href = "<?php echo base_url();?>"><button type="button" class="btn btn-light btn-lg">Home</button></a>
+  </div>
+  </div></center>
+  </body>
+  </html>

@@ -6,6 +6,7 @@ use App\Models\NewsModel;
 
 class News extends BaseController
 {
+
     public function index()
     {
         $model = model(NewsModel::class);
@@ -14,7 +15,7 @@ class News extends BaseController
             'users'  => $model->getNews()
             
         ];
-
+helper(['form']);
         return //view ( 'abc' );
         view('templates/header', $data)
              . view('news/overview');
@@ -30,6 +31,7 @@ class News extends BaseController
 
         if (empty($data['users'])) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Cannot find the news item: ' . $password);
+            //alert('Email already exists');
         }
 
         $data['email'] = $data['users']['email'];
@@ -43,8 +45,8 @@ class News extends BaseController
         $model = model(NewsModel::class);
 
         if ($this->request->getMethod() === 'post' && $this->validate([
-            'email'         => 'required|min_length[4]|max_length[100]|valid_email|is_unique[users.email]',
-            'password'      => 'required|min_length[4]|max_length[50]',
+            'email'         => 'required|min_length[8]|max_length[100]|valid_email|is_unique[users.email]',
+            'password'      => 'required|min_length[4]|max_length[10]',
             'cpassword'  => 'matches[password]'
         ])) {
             $model->save([
@@ -56,10 +58,50 @@ class News extends BaseController
             return view('news/success');
         }
 
-        return view('templates/header', ['title' => 'Register'])
-        . view('news/success');
-           // . view('news/create');
+        return view('news/create');
+        //view('templates/header', ['title' => 'Register'])
+        //. view('news/success')
+          
             //. view('templates/footer');
+            
+            
     }
+ public function add(){
+   //$session = session();
+        $newsModel = new NewsModel();
+       // $email = $this->request->getVar('email');
+       // $password = $this->request->getVar('password');
+        
+        $data = $newsModel->where('email', $this->request->getPost('email'))->first();
+        
+        
+        
+        if($data){
+          //  $email = $data['email'];
+           
+            if($data['email']==$this->request->getPost('email')){
+              /*  $ses_data = [
+                    'id' => $data['id'],
+                    'email' => $data['email'],
+                    'password' => $data['password'],
+                    'isLoggedIn' => TRUE
+                ];
+
+                $session->set($ses_data);*/
+                return view('news/add');
+            
+            }else{
+                //$session->setFlashdata('msg', 'Password is incorrect.');
+                 return view('templates/header')
+             		.view('news/add');
+            }
+
+        }
+        else{
+           // $session->setFlashdata('msg', 'Email does not exist.');
+            return view('templates/header')
+             . view('news/add');
+    }
+}
 
 }

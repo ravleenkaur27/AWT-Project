@@ -10,12 +10,13 @@ class NewsModel extends Model
    
 
     protected $allowedFields = ['email', 'password', 'cpassword'];
-    public function getNews($password = false)
+    public function getNews($email = false)
     {
-        if ($password === false) {
+        if ($email === false) {
             return $this->findAll();
+            
         }
 
-        return $this->where(['password' => $password])->first();
+        return $this->where(['email' => $email])->first();
     }
 }
