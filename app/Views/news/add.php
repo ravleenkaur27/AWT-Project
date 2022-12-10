@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>MINI INVENTORY SYSTEM</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+   <link type="text/css" href="<?php echo base_url('css/bootstrap.min.css');?>" rel="stylesheet">
+<link type="text/css" href="<?php echo base_url('css/mystylesheet.css'); ?>" rel="stylesheet">
   <link href="http://localhost/CopyCI/public/index.css" rel="stylesheet">
  
   <script src="js/bootstrap.bundle.min.js">
@@ -22,7 +23,7 @@
           <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav  ms-auto list">
                 <li class="nav-item nvitems">
-                    <a class="nav-link" href="About.html">Product Inventory</a>
+                    <a class="nav-link" href="">Product Inventory</a>
                   </li>
                   <li class="nav-item nvitems">
                     <a class="nav-link" href="">Product List</a>
