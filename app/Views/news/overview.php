@@ -4,7 +4,7 @@
   <title>MINI INVENTORY SYSTEM</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
   <link href="http://localhost/CopyCI/public/index.css" rel="stylesheet">
  
@@ -59,7 +59,7 @@ function hide()
                     <div class="card-body p-3 text-center">
                         <h3 class="fw-bold mb-2 text-uppercase">Admin Login</h3>
                         <p class="text-white-50 ">Please enter your name and password!</p>
-                        <form action="<?php echo base_url();?>/news/add" method="post">
+                        <form action="<?php echo base_url();?>/dealers/second" method="post">
     <?= csrf_field() ?>
                         <div class="form-outline form-white mb-4">
                           <input type="email" placeholder="Username"  class="form-control form-control-lg" />

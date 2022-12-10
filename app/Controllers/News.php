@@ -66,7 +66,7 @@ helper(['form']);
             
             
     }
- public function add(){
+ public function second(){
    //$session = session();
         $newsModel = new NewsModel();
        // $email = $this->request->getVar('email');
@@ -88,19 +88,19 @@ helper(['form']);
                 ];
 
                 $session->set($ses_data);*/
-                return view('news/add');
+                return view('dealers/second');
             
             }else{
                 //$session->setFlashdata('msg', 'Password is incorrect.');
                  return view('templates/header')
-             		.view('news/add');
+             		.view('dealers/second');
             }
 
         }
         else{
            // $session->setFlashdata('msg', 'Email does not exist.');
             return view('templates/header')
-             . view('news/add');
+             . view('dealers/second');
     }
 }
 
