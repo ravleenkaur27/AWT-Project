@@ -22,9 +22,34 @@ $data =[
 'phone' => $this->request->getPost('phone'),
 'company' => $this->request->getPost('company'),
 ];
-$dealers->save($data);
+$dealers->insert($data);
 
 return redirect()->to(base_url('dealers/second'))->with('status','Done');
 }
+public function edit($id)
+{
+$dealers = new DealersModel();
+$data['dealers'] = $dealers->find($id);
+return view('dealers/edit', $data);
 }
+public function update($id)
+{
+$dealers = new DealersModel();
+$id = $this->request->getVar('id');
+$data =[
+'name' => $this->request->getPost('name'),
+'phone' => $this->request->getPost('phone'),
+'company' => $this->request->getPost('company'),
+];
+$dealers->update($id , $data);
+return redirect()->to(base_url('dealers/second'))->with('status','Done');
+}
+public function delete($id)
+{
+$dealers = new DealersModel();
+$dealers->delete($id);
+
+return $this->response->redirect(base_url('dealers/second'));
+
+}}
 ?>

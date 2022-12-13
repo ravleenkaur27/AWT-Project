@@ -11,6 +11,14 @@
  
   <script src="js/bootstrap.bundle.min.js">
    </script>
+   <script>
+   function show()
+   {
+   document.getElementById('dealer').style.display = 'block';}
+   function hide()
+   {
+   document.getElementById('card').style.display = 'hide';}
+   </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-custom  navbar-dark fixed-top">
@@ -29,9 +37,9 @@
                     <a class="nav-link" href="">Product List</a>
                   </li>
                   <li class="nav-item nvitems">
-                    <a class="nav-link" href="">Dealers</a>
+                    <a class="nav-link" href="" onclick="show" id="dealer">Dealers</a>
                   </li>
-                  <button class="btn btn-secondary btnls"  type="button" data-bs-toggle="modal" data-bs-target="#myModal2">Add Dealers </button>
+                  <a href="<?= base_url('dealers/dealer-add') ?>"><button class="btn btn-secondary btnls"  type="button" data-bs-toggle="modal" data-bs-target="#myModal2">Add Dealers </button></a>
                   <button class="btn btn-danger btnls"  type="button" data-bs-toggle="modal" data-bs-target="#myModal">Add Products </button>
             </ul>
           
@@ -39,25 +47,25 @@
         </div>
       </nav>
 <div class="bg">
-      <div class="container">
-      <div class ="row">
-      <div class="col-md-12 mt-5">
+      <div class="container"  id="card">
+      <div class ="row d-flex justify-content-center align-items-center">
+      <div class="col-md-8 mt-5">
       <?php 
       if(session()->getFlashdata('status'))
       { echo "<h4>".session()->getFlashdata('status')."</h4>";}
       ?> 
-      <div class="card">
+      <div class="card cardclr">
       <div class="card-header">
-      <h4>Dealers Data
-      <a href="<?= base_url('dealers/dealer-add') ?>" class="btn btn-primary float-end">Add Dealer</a>
+      <h4 style="color:white";>Dealers Data
+      <a href="<?= base_url('dealers/dealer-add') ?>" class="btn btn-secondary float-end">Add Dealer</a>
       </h4>
       
       </div>
       <div class="card-body">
-      <table class= "table table-bordered">
+      <table class= "table table-bordered" style="color:white";>
       <thead>
       <tr>
-      <th>Id</th>
+      <th>Sr No.</th>
       <th>Name</th>
       <th>Phone</th>
       <th>Company</th>
@@ -74,12 +82,12 @@
       <td>'.$row["name"].'</td>
       <td>'.$row["phone"].'</td>
       <td>'.$row["company"].'</td>
-      <td>
-      <a href="" class="btn btn-success btn-sm">Edit</a>
-      <a href="" class="btn btn-danger btn-sm">Delete</a>
-      </td>
-      
+      <td><a href = "'.base_url().'/dealers/edit/'.$row["id"].'" class="btn btn-dark btn-sm">Edit</a>
+      <a href="'.base_url().'/dealers/delete/'.$row["id"].'" class="btn btn-danger btn-sm">Delete</a></td>
       </tr>'
+     
+      
+      
       
       ;}} ?>
       </tbody></table>

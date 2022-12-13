@@ -19,7 +19,7 @@ helper(['form']);
         return //view ( 'abc' );
         view('templates/header', $data)
              . view('news/overview');
-            //. view('templates/footer');
+            //. view('news/nav');
     }
 
     // ...
@@ -103,5 +103,8 @@ helper(['form']);
              . view('dealers/second');
     }
 }
-
+public function nav()
+{
+return view('news/nav');
+}
 }

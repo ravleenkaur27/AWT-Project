@@ -59,7 +59,7 @@ function hide()
                     <div class="card-body p-3 text-center">
                         <h3 class="fw-bold mb-2 text-uppercase">Admin Login</h3>
                         <p class="text-white-50 ">Please enter your name and password!</p>
-                        <form action="<?php echo base_url();?>/dealers/second" method="post">
+                        <form action="<?php echo base_url();?>/news/nav" method="post">
     <?= csrf_field() ?>
                         <div class="form-outline form-white mb-4">
                           <input type="email" placeholder="Username"  class="form-control form-control-lg" />

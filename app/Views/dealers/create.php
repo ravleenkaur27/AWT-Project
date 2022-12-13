@@ -9,19 +9,19 @@
   <link href="http://localhost/CopyCI/public/index.css" rel="stylesheet">
  </head>
 <body>
-
+<div class ="bg">
 <div class="container">
-      <div class ="row">
+      <div class ="row d-flex justify-content-center align-items-center">
       <div class="col-md-6 mt-5">
-      <div class="card">
+      <div class="card cardclr">
       <div class="card-header">
-      <h4>Add Dealer
+      <h4 style="color:white";>Add Dealer
       <a href="<?= base_url('dealers/second') ?>" class="btn btn-danger float-end">Back</a>
       </h4>
       
       </div>
       <div class="card-body">
-      <form action = "<?php echo base_url('dealers/second');?>" method="post">
+      <form action = "<?= base_url('dealers/second') ?>" method="post">
       <div class="row">
       <div class="col-md-12">
       <div class="form-group mb-3">
@@ -51,5 +51,5 @@
       </div>
       
       </div>
-      </div>
+      </div></div>
       </body>
