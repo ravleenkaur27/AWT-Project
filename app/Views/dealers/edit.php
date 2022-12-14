@@ -9,39 +9,40 @@
   <link href="http://localhost/CopyCI/public/index.css" rel="stylesheet">
  </head>
 <body>
-<div class ="bg">
+<div class = "bg">
 <div class="container">
       <div class ="row d-flex justify-content-center align-items-center">
       <div class="col-md-6 mt-5">
       <div class="card cardclr">
       <div class="card-header">
-      <h4 style="color:white";>Add Dealer
+      <h4 style="color:white";>Update Dealer's Details
       <a href="<?= base_url('dealers/second') ?>" class="btn btn-danger float-end">Back</a>
       </h4>
       
       </div>
       <div class="card-body">
-
-      <form action = "<?= base_url('dealers/adddealer') ?>" method="get">
+      <form action = "<?php echo base_url('dealers/update/'.$dealers['id']);?>" method="get">
       <div class="row">
       <div class="col-md-12">
       <div class="form-group mb-3">
-      <input type = "text" name ="name" placeholder=" Enter Dealer's Name" class ="form-control">
+      <input type = "text" name ="name" value="<?= $dealers['name'] ?>" placeholder=" Enter Dealer's Name" class ="form-control">
+      
+      
       </div>
       </div>
       <div class="col-md-12">
       <div class="form-group mb-3">
-      <input type = "number" name ="phone" placeholder="Enter Dealer's Phone Number" class ="form-control">
+      <input type = "number" name ="phone" value="<?= $dealers['phone'] ?>" placeholder=" Enter Dealer's Phone Number" class ="form-control">
       </div></div>
       <div class="col-md-12">
       <div class="form-group mb-3">
-      <input type = "text" name ="company" placeholder=" Enter Dealer's Company" class ="form-control">
+      <input type = "text" name ="company" value="<?= $dealers['company'] ?>" placeholder=" Enter Dealer's Company" class ="form-control">
       </div>
       
       </div>
       <div class="col-md-12">
       <div class="form-group mb-3">
-      <button type = "submit" class ="btn btn-primary px-4">Add Dealer</button>
+      <button type = "submit" class ="btn btn-success px-4">Update Dealer</button>
       </div>
       
       </div> </form>

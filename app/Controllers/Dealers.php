@@ -35,14 +35,14 @@ return view('dealers/edit', $data);
 public function update($id)
 {
 $dealers = new DealersModel();
-$id = $this->request->getVar('id');
+//$id = $this->request->getVar('id');
 $data =[
-'name' => $this->request->getPost('name'),
-'phone' => $this->request->getPost('phone'),
-'company' => $this->request->getPost('company'),
+'name' => $this->request->getVar('name'),
+'phone' => $this->request->getVar('phone'),
+'company' => $this->request->getVar('company'),
 ];
 $dealers->update($id , $data);
-return redirect()->to(base_url('dealers/second'))->with('status','Done');
+return redirect()->to(base_url('dealers/second'))->with('status','Dealer Updated Successfully');
 }
 public function delete($id)
 {

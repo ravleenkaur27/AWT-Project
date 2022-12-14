@@ -42,11 +42,14 @@ $routes->match(['get', 'post'], 'news/success', 'News::success');
 $routes->match(['get', 'post'], 'dealers/second', 'Dealers::index');
 $routes->match(['get', 'post'], 'news/nav', 'News::nav');
 
-$routes->get('dealers/second', 'Dealers::index');
+//$routes->get('dealers/second', 'Dealers::index');
 $routes->get('dealers/dealer-add', 'Dealers::create');
-$routes->get('dealers/dealer-store', 'Dealers::store');
+//$routes->get('dealers/second', 'Dealers::store');
+$routes->match(['get', 'post'], 'second', 'Dealers::store');
+$routes->get('dealers/adddealer', 'AddDealer::store');
+
 $routes->get('dealers/edit/(:num)','Dealers::edit/$1');
-$routes->post('dealers/update/(:num)','Dealers::update/$1');
+$routes->get('dealers/update/(:num)','Dealers::update/$1');
 $routes->get('dealers/delete/(:num)','Dealers::delete/$1');
 
 $routes->get('news/(:segment)', 'News::view/$1');
