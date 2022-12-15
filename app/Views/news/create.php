@@ -12,7 +12,7 @@
 <div class="container mt-3">
   
   <div class="alert alert-danger">
-    <h3><strong>OOPS! Something went wrong!</strong> Click on the button to return to home page! </h3><br>
+    <h3><strong>OOPS! Wrong Login Credentials!</strong> Click on the button to return to home page! </h3><br>
     <a href = "<?php echo base_url();?>"><button type="button" class="btn btn-light btn-lg">Home</button></a>
   </div>
   </div></center>

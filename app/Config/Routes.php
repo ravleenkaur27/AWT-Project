@@ -37,12 +37,13 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 $routes->get('/', 'News::index');
+
 $routes->match(['get', 'post'], 'news/create', 'News::create');
 $routes->match(['get', 'post'], 'news/success', 'News::success');
 $routes->match(['get', 'post'], 'dealers/second', 'Dealers::index');
 $routes->match(['get', 'post'], 'news/nav', 'News::nav');
-
-//$routes->get('dealers/second', 'Dealers::index');
+$routes->match(['get', 'post'], 'news/nav', 'Login::login');
+$routes->post('news/login', 'Login::login');
 $routes->get('dealers/dealer-add', 'Dealers::create');
 //$routes->get('dealers/second', 'Dealers::store');
 $routes->match(['get', 'post'], 'second', 'Dealers::store');

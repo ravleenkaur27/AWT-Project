@@ -59,14 +59,21 @@ function hide()
                     <div class="card-body p-3 text-center">
                         <h3 class="fw-bold mb-2 text-uppercase">Admin Login</h3>
                         <p class="text-white-50 ">Please enter your name and password!</p>
-                        <form action="<?php echo base_url();?>/news/nav" method="post">
+                        
+                        <?php if(session()->getFlashdata('msg')):?>
+                        <div class="alert alert-danger">
+                        <?= session()->getFlashdata('msg') ?>
+                        </div>
+                        <?php endif;?>
+                        
+                        <form action="<?php echo base_url('news/login');?>" method="post">
     <?= csrf_field() ?>
                         <div class="form-outline form-white mb-4">
-                          <input type="email" placeholder="Username"  class="form-control form-control-lg" />
+                          <input type="email" name="email"  placeholder="Username"  class="form-control form-control-lg" required/>
                         </div>
           
                         <div class="form-outline form-white mb-4">
-                          <input type="password" placeholder="Password" class="form-control form-control-lg" />
+                          <input type="password" name="password" placeholder="Password" class="form-control form-control-lg" required/>
                           
                         </div>
                         
@@ -105,7 +112,7 @@ function hide()
    
                                   <div class="mb-3">
                                       <label class="form-label" style="color: white;">Email Address</label>
-                                      <input type="text" class="form-control" id="username" name='email' placeholder="Username" required />
+                                      <input type="text" class="form-control" id="username" name="email" placeholder="Username" required />
                                       
                                   </div>
                                   <div class="mb-3">

@@ -66,43 +66,43 @@ helper(['form']);
             
             
     }
- public function second(){
-   //$session = session();
+ /*public function login(){
+   $session = session();
         $newsModel = new NewsModel();
-       // $email = $this->request->getVar('email');
-       // $password = $this->request->getVar('password');
+       $email = $this->request->getVar('email');
+        $password = $this->request->getVar('password');
         
-        $data = $newsModel->where('email', $this->request->getPost('email'))->first();
+        $data = $newsModel->where('email', $email)->first();
         
         
         
         if($data){
-          //  $email = $data['email'];
-           
-            if($data['email']==$this->request->getPost('email')){
-              /*  $ses_data = [
+          $pass = $data['password'];
+           $authenticatePassword = password_verify($password , $pass);
+            if($authenticatePassword){
+               $ses_data = [
                     'id' => $data['id'],
                     'email' => $data['email'],
-                    'password' => $data['password'],
-                    'isLoggedIn' => TRUE
+                    'password' => $data['password']
+                    
                 ];
 
-                $session->set($ses_data);*/
+                $session->set($ses_data);
                 return view('dealers/second');
             
             }else{
-                //$session->setFlashdata('msg', 'Password is incorrect.');
+                $session->setFlashdata('msg', 'Password is incorrect.');
                  return view('templates/header')
-             		.view('dealers/second');
+             		.view('news/create');
             }
 
         }
         else{
-           // $session->setFlashdata('msg', 'Email does not exist.');
+           $session->setFlashdata('msg', 'Email does not exist.');
             return view('templates/header')
-             . view('dealers/second');
+             . view('news/create');
     }
-}
+}*/
 public function nav()
 {
 return view('news/nav');
